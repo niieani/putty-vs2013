@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <SccProjectName />
     <SccLocalPath />
-    <ProjectGuid>{8f44624a-d188-4188-b9aa-5f99f20723e1}</ProjectGuid>
+    <ProjectGuid>{F083D342-AA3B-4828-82F8-6B54771958B8}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -47,6 +47,7 @@
     <OutDir>.\Debug\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -96,8 +97,8 @@
       <WarningLevel>Level3</WarningLevel>
       <MinimalRebuild>true</MinimalRebuild>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\..\./;..\..\..\charset/;..\..\..\windows/;..\..\..\unix/;..\..\..\macosx/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;POSIX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;PERSOPORT;MASTER_PASSWORD="Undefined";VISUALSTUDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\./;..\..\..\charset/;..\..\..\windows/;..\..\..\unix/;..\..\..\macosx/;..\..\..\..\;..\..\..\..\dirent\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;POSIX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;PERSOPORT;MASTER_PASSWORD="Undefined";SECURITY_WIN32;VISUALSTUDIO;_WINSOCKAPI_;KITTY_INI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Debug\putty.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Debug\</ObjectFileName>
@@ -124,10 +125,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(TargetPath)</OutputFile>
-      <AdditionalDependencies>advapi32.lib;comctl32.lib;comdlg32.lib;gdi32.lib;imm32.lib;ole32.lib;shell32.lib;user32.lib;winmm.lib;winspool.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>advapi32.lib;comctl32.lib;comdlg32.lib;gdi32.lib;imm32.lib;ole32.lib;shell32.lib;user32.lib;winmm.lib;winspool.lib;ws2_32.lib;../../../../mini-chkstk.a;../../../../m1-chat.a;../../../../libregex.a;../../../../libmingwex.a;../../../../notepad.a;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalManifestDependencies>"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'"</AdditionalManifestDependencies>
       <TypeLibraryResourceID>
       </TypeLibraryResourceID>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -141,10 +143,10 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\base64\base64.c" />
     <ClCompile Include="..\..\..\..\kitty.c" />
     <ClCompile Include="..\..\..\..\kitty_commun.c" />
     <ClCompile Include="..\..\..\..\kitty_crypt.c" />
-    <ClCompile Include="..\..\..\..\kitty_dll.c" />
     <ClCompile Include="..\..\..\..\kitty_image.c" />
     <ClCompile Include="..\..\..\..\kitty_regex.c" />
     <ClCompile Include="..\..\..\..\kitty_registry.c" />
@@ -153,13 +155,11 @@
     <ClCompile Include="..\..\..\..\kitty_win.c" />
     <ClCompile Include="..\..\..\..\private_key.c" />
     <ClCompile Include="..\..\..\be_all_s.c" />
-    <ClCompile Include="..\..\..\callback.c" />
     <ClCompile Include="..\..\..\cmdline.c" />
     <ClCompile Include="..\..\..\conf.c" />
     <ClCompile Include="..\..\..\config.c" />
     <ClCompile Include="..\..\..\cproxy.c" />
     <ClCompile Include="..\..\..\dialog.c" />
-    <ClCompile Include="..\..\..\errsock.c" />
     <ClCompile Include="..\..\..\ldisc.c" />
     <ClCompile Include="..\..\..\ldiscucs.c" />
     <ClCompile Include="..\..\..\logging.c" />
@@ -183,7 +183,6 @@
     <ClCompile Include="..\..\..\sshdes.c" />
     <ClCompile Include="..\..\..\sshdh.c" />
     <ClCompile Include="..\..\..\sshdss.c" />
-    <ClCompile Include="..\..\..\sshecc.c" />
     <ClCompile Include="..\..\..\sshgssc.c" />
     <ClCompile Include="..\..\..\sshmd5.c" />
     <ClCompile Include="..\..\..\sshpubk.c" />
@@ -192,7 +191,6 @@
     <ClCompile Include="..\..\..\sshsh256.c" />
     <ClCompile Include="..\..\..\sshsh512.c" />
     <ClCompile Include="..\..\..\sshsha.c" />
-    <ClCompile Include="..\..\..\sshshare.c" />
     <ClCompile Include="..\..\..\sshzlib.c" />
     <ClCompile Include="..\..\..\telnet.c" />
     <ClCompile Include="..\..\..\terminal.c" />
@@ -210,19 +208,14 @@
     <ClCompile Include="..\..\wingss.c" />
     <ClCompile Include="..\..\winhandl.c" />
     <ClCompile Include="..\..\winhelp.c" />
-    <ClCompile Include="..\..\winhsock.c" />
     <ClCompile Include="..\..\winjump.c" />
     <ClCompile Include="..\..\winmisc.c" />
     <ClCompile Include="..\..\winnet.c" />
     <ClCompile Include="..\..\winnoise.c" />
-    <ClCompile Include="..\..\winnpc.c" />
-    <ClCompile Include="..\..\winnps.c" />
     <ClCompile Include="..\..\winpgntc.c" />
     <ClCompile Include="..\..\winprint.c" />
     <ClCompile Include="..\..\winproxy.c" />
-    <ClCompile Include="..\..\winsecur.c" />
     <ClCompile Include="..\..\winser.c" />
-    <ClCompile Include="..\..\winshare.c" />
     <ClCompile Include="..\..\winstore.c" />
     <ClCompile Include="..\..\wintime.c" />
     <ClCompile Include="..\..\winucs.c" />
@@ -232,7 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\base64.h" />
-    <ClInclude Include="..\..\..\..\bcrypt.h" />
+    <ClInclude Include="..\..\..\..\bcrypt_.h" />
     <ClInclude Include="..\..\..\..\dirent\dirent.h" />
     <ClInclude Include="..\..\..\..\kitty.h" />
     <ClInclude Include="..\..\..\..\kitty_commun.h" />

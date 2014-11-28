@@ -16,6 +16,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "puttygen", "puttygen\puttyg
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "puttytel", "puttytel\puttytel.vcxproj", "{B7DD98FF-B336-4D23-9C07-E5FA7A9F3130}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kitty", "kitty\kitty.vcxproj", "{F083D342-AA3B-4828-82F8-6B54771958B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -50,6 +52,10 @@ Global
 		{B7DD98FF-B336-4D23-9C07-E5FA7A9F3130}.Debug|Win32.Build.0 = Debug|Win32
 		{B7DD98FF-B336-4D23-9C07-E5FA7A9F3130}.Release|Win32.ActiveCfg = Release|Win32
 		{B7DD98FF-B336-4D23-9C07-E5FA7A9F3130}.Release|Win32.Build.0 = Release|Win32
+		{F083D342-AA3B-4828-82F8-6B54771958B8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F083D342-AA3B-4828-82F8-6B54771958B8}.Debug|Win32.Build.0 = Debug|Win32
+		{F083D342-AA3B-4828-82F8-6B54771958B8}.Release|Win32.ActiveCfg = Release|Win32
+		{F083D342-AA3B-4828-82F8-6B54771958B8}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

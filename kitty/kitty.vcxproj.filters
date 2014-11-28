@@ -17,9 +17,6 @@
     <ClCompile Include="..\..\..\be_all_s.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\callback.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\cmdline.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\dialog.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\errsock.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\ldisc.c">
@@ -107,9 +101,6 @@
     <ClCompile Include="..\..\..\sshdss.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\sshecc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\sshgssc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -132,9 +123,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\sshsha.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\sshshare.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\sshzlib.c">
@@ -188,9 +176,6 @@
     <ClCompile Include="..\..\winhelp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\winhsock.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\winjump.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -203,12 +188,6 @@
     <ClCompile Include="..\..\winnoise.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\winnpc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\winnps.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\winpgntc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -218,13 +197,7 @@
     <ClCompile Include="..\..\winproxy.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\winsecur.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\winser.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\winshare.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\winstore.c">
@@ -254,9 +227,6 @@
     <ClCompile Include="..\..\..\..\kitty_crypt.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\kitty_dll.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\kitty_image.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -276,6 +246,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\private_key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\base64\base64.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -362,16 +335,10 @@
     <ClInclude Include="..\..\..\..\base64.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\bcrypt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\kitty.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\kitty_commun.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\kitty_crypt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\kitty_image.h">
@@ -405,6 +372,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\dirent\dirent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\kitty_crypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\bcrypt_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
