@@ -251,6 +251,12 @@
     <ClCompile Include="..\..\..\..\base64\base64.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\url\urlhack.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\url\re_lib\regexp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\charset\charset.h">
@@ -377,7 +383,16 @@
     <ClInclude Include="..\..\..\..\kitty_crypt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\bcrypt_.h">
+    <ClInclude Include="..\..\..\..\url\urlhack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\url\re_lib\regexp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\url\re_lib\regmagic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\kitty_bcrypt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

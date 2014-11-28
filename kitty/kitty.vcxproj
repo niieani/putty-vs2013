@@ -125,7 +125,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(TargetPath)</OutputFile>
-      <AdditionalDependencies>advapi32.lib;comctl32.lib;comdlg32.lib;gdi32.lib;imm32.lib;ole32.lib;shell32.lib;user32.lib;winmm.lib;winspool.lib;ws2_32.lib;../../../../mini-chkstk.a;../../../../m1-chat.a;../../../../libregex.a;../../../../libmingwex.a;../../../../notepad.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>advapi32.lib;comctl32.lib;comdlg32.lib;gdi32.lib;imm32.lib;ole32.lib;shell32.lib;user32.lib;winmm.lib;winspool.lib;ws2_32.lib;../../../../mini.a;../../../../m1-chat.a;../../../../notepad.a;../../../../bcrypt.a;../../../../libmingwex.a;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalManifestDependencies>"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'"</AdditionalManifestDependencies>
       <TypeLibraryResourceID>
       </TypeLibraryResourceID>
@@ -154,6 +154,8 @@
     <ClCompile Include="..\..\..\..\kitty_tools.c" />
     <ClCompile Include="..\..\..\..\kitty_win.c" />
     <ClCompile Include="..\..\..\..\private_key.c" />
+    <ClCompile Include="..\..\..\..\url\re_lib\regexp.c" />
+    <ClCompile Include="..\..\..\..\url\urlhack.c" />
     <ClCompile Include="..\..\..\be_all_s.c" />
     <ClCompile Include="..\..\..\cmdline.c" />
     <ClCompile Include="..\..\..\conf.c" />
@@ -225,9 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\base64.h" />
-    <ClInclude Include="..\..\..\..\bcrypt_.h" />
     <ClInclude Include="..\..\..\..\dirent\dirent.h" />
     <ClInclude Include="..\..\..\..\kitty.h" />
+    <ClInclude Include="..\..\..\..\kitty_bcrypt.h" />
     <ClInclude Include="..\..\..\..\kitty_commun.h" />
     <ClInclude Include="..\..\..\..\kitty_crypt.h" />
     <ClInclude Include="..\..\..\..\kitty_image.h" />
@@ -240,6 +242,9 @@
     <ClInclude Include="..\..\..\..\MD5check.h" />
     <ClInclude Include="..\..\..\..\notepad.h" />
     <ClInclude Include="..\..\..\..\regex.h" />
+    <ClInclude Include="..\..\..\..\url\re_lib\regexp.h" />
+    <ClInclude Include="..\..\..\..\url\re_lib\regmagic.h" />
+    <ClInclude Include="..\..\..\..\url\urlhack.h" />
     <ClInclude Include="..\..\..\charset\charset.h" />
     <ClInclude Include="..\..\..\dialog.h" />
     <ClInclude Include="..\..\..\int64.h" />
