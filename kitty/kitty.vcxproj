@@ -201,6 +201,7 @@
     <ClCompile Include="..\..\..\version.c" />
     <ClCompile Include="..\..\..\wcwidth.c" />
     <ClCompile Include="..\..\..\wildcard.c" />
+    <ClCompile Include="..\..\..\x11fwd.c" />
     <ClCompile Include="..\..\sizetip.c" />
     <ClCompile Include="..\..\wincfg.c" />
     <ClCompile Include="..\..\winctrls.c" />
@@ -223,7 +224,15 @@
     <ClCompile Include="..\..\winucs.c" />
     <ClCompile Include="..\..\winutils.c" />
     <ClCompile Include="..\..\winx11.c" />
-    <ClCompile Include="..\..\..\x11fwd.c" />
+    <ClCompile Include="..\..\winhsock.c" />
+    <ClCompile Include="..\..\winnpc.c" />
+    <ClCompile Include="..\..\winnps.c" />
+    <ClCompile Include="..\..\winsecur.c" />
+    <ClCompile Include="..\..\winshare.c" />
+    <ClCompile Include="..\..\..\callback.c" />
+    <ClCompile Include="..\..\..\errsock.c" />
+    <ClCompile Include="..\..\..\sshecc.c" />
+    <ClCompile Include="..\..\..\sshshare.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\base64.h" />
