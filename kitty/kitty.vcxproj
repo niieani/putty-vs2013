@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>.\Release\</OutDir>
     <IntDir>.\Release\</IntDir>
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Debug\</OutDir>
@@ -58,8 +58,8 @@
       <Optimization>MaxSpeed</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\..\..\./;..\..\..\charset/;..\..\..\windows/;..\..\..\unix/;..\..\..\macosx/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;POSIX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\./;..\..\..\charset/;..\..\..\windows/;..\..\..\unix/;..\..\..\macosx/;..\..\..\..\;..\..\..\..\dirent\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;POSIX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCKAPI_;SECURITY_WIN32;MASTER_PASSWORD="Undefined";PERSOPORT;NO_FAIL_MESSAGEBOX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Release\putty.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
@@ -74,7 +74,7 @@
     </Midl>
     <ResourceCompile>
       <Culture>0x0809</Culture>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;PERSOPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -84,7 +84,9 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
       <OutputFile>.\Release\putty.exe</OutputFile>
-      <AdditionalDependencies>advapi32.lib;comctl32.lib;comdlg32.lib;gdi32.lib;imm32.lib;ole32.lib;shell32.lib;user32.lib;winmm.lib;winspool.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>advapi32.lib;comctl32.lib;comdlg32.lib;gdi32.lib;imm32.lib;ole32.lib;shell32.lib;user32.lib;winmm.lib;winspool.lib;ws2_32.lib;../../../../mini.a;../../../../m1-chat.a;../../../../notepad.a;../../../../bcrypt.a;../../../../libmingwex.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalManifestDependencies>"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'"</AdditionalManifestDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -98,7 +100,7 @@
       <MinimalRebuild>true</MinimalRebuild>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalIncludeDirectories>..\..\..\./;..\..\..\charset/;..\..\..\windows/;..\..\..\unix/;..\..\..\macosx/;..\..\..\..\;..\..\..\..\dirent\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;POSIX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;PERSOPORT;MASTER_PASSWORD="Undefined";SECURITY_WIN32;VISUALSTUDIO;_WINSOCKAPI_;KITTY_INI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;POSIX;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCKAPI_;SECURITY_WIN32;MASTER_PASSWORD="Undefined";PERSOPORT;NO_FAIL_MESSAGEBOX;TUTTYPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Debug\putty.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Debug\</ObjectFileName>
@@ -114,7 +116,7 @@
     </Midl>
     <ResourceCompile>
       <Culture>0x0809</Culture>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;PERSOPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -283,9 +285,62 @@
     <ClInclude Include="..\..\winstuff.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\res\Hover.cur" />
     <None Include="..\..\putty.mft">
       <SubType>Designer</SubType>
     </None>
+    <None Include="..\..\version.rc2" />
+    <None Include="..\..\win_res.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\cthelper\puttycyg.ico" />
+    <Image Include="..\..\..\..\kitty.ico" />
+    <Image Include="..\..\..\..\res\0.ico" />
+    <Image Include="..\..\..\..\res\1.ico" />
+    <Image Include="..\..\..\..\res\2.ico" />
+    <Image Include="..\..\..\..\res\3.ico" />
+    <Image Include="..\..\..\..\res\4.ico" />
+    <Image Include="..\..\..\..\res\5.ico" />
+    <Image Include="..\..\..\..\res\6.ico" />
+    <Image Include="..\..\..\..\res\7.ico" />
+    <Image Include="..\..\..\..\res\8.ico" />
+    <Image Include="..\..\..\..\res\9.ico" />
+    <Image Include="..\..\..\..\res\bille.ico" />
+    <Image Include="..\..\..\..\res\bunny.ico" />
+    <Image Include="..\..\..\..\res\coq.ico" />
+    <Image Include="..\..\..\..\res\coyote.ico" />
+    <Image Include="..\..\..\..\res\daffy.ico" />
+    <Image Include="..\..\..\..\res\daphne.ico" />
+    <Image Include="..\..\..\..\res\edit.ico" />
+    <Image Include="..\..\..\..\res\elmer.ico" />
+    <Image Include="..\..\..\..\res\file_assoc\kitty_assoc.ico" />
+    <Image Include="..\..\..\..\res\freddie.ico" />
+    <Image Include="..\..\..\..\res\general.ico" />
+    <Image Include="..\..\..\..\res\hagar.ico" />
+    <Image Include="..\..\..\..\res\hellokitty.ico" />
+    <Image Include="..\..\..\..\res\jerry.ico" />
+    <Image Include="..\..\..\..\res\mars.ico" />
+    <Image Include="..\..\..\..\res\pepepu.ico" />
+    <Image Include="..\..\..\..\res\porky.ico" />
+    <Image Include="..\..\..\..\res\putty2.ico" />
+    <Image Include="..\..\..\..\res\putty3.ico" />
+    <Image Include="..\..\..\..\res\puttyprd.ico" />
+    <Image Include="..\..\..\..\res\putty_launcher.ico" />
+    <Image Include="..\..\..\..\res\rocky.ico" />
+    <Image Include="..\..\..\..\res\runner.ico" />
+    <Image Include="..\..\..\..\res\sam.ico" />
+    <Image Include="..\..\..\..\res\scooby.ico" />
+    <Image Include="..\..\..\..\res\shaggy.ico" />
+    <Image Include="..\..\..\..\res\snoopy.ico" />
+    <Image Include="..\..\..\..\res\speedy.ico" />
+    <Image Include="..\..\..\..\res\sylvester.ico" />
+    <Image Include="..\..\..\..\res\taz.ico" />
+    <Image Include="..\..\..\..\res\tom.ico" />
+    <Image Include="..\..\..\..\res\tweety.ico" />
+    <Image Include="..\..\..\..\res\velma.ico" />
+    <Image Include="..\..\..\..\res\woods.ico" />
+    <Image Include="..\..\..\..\res\woody.ico" />
+    <Image Include="..\..\..\..\res\yogi.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

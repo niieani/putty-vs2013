@@ -257,6 +257,15 @@
     <ClCompile Include="..\..\..\..\url\re_lib\regexp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\winhsock.c" />
+    <ClCompile Include="..\..\winnpc.c" />
+    <ClCompile Include="..\..\winnps.c" />
+    <ClCompile Include="..\..\winsecur.c" />
+    <ClCompile Include="..\..\winshare.c" />
+    <ClCompile Include="..\..\..\callback.c" />
+    <ClCompile Include="..\..\..\errsock.c" />
+    <ClCompile Include="..\..\..\sshecc.c" />
+    <ClCompile Include="..\..\..\sshshare.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\charset\charset.h">
@@ -337,7 +346,6 @@
     <ClInclude Include="..\..\winstuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\resource.h" />
     <ClInclude Include="..\..\..\..\base64.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -395,6 +403,7 @@
     <ClInclude Include="..\..\..\..\kitty_bcrypt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
@@ -409,5 +418,62 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\putty.mft" />
+    <None Include="..\..\version.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\win_res.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\res\Hover.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\kitty.ico" />
+    <Image Include="..\..\..\..\res\file_assoc\kitty_assoc.ico" />
+    <Image Include="..\..\..\..\res\puttyprd.ico" />
+    <Image Include="..\..\..\..\res\putty2.ico" />
+    <Image Include="..\..\..\..\res\putty3.ico" />
+    <Image Include="..\..\..\..\res\coyote.ico" />
+    <Image Include="..\..\..\..\res\daffy.ico" />
+    <Image Include="..\..\..\..\res\tweety.ico" />
+    <Image Include="..\..\..\..\res\sylvester.ico" />
+    <Image Include="..\..\..\..\res\0.ico" />
+    <Image Include="..\..\..\..\res\1.ico" />
+    <Image Include="..\..\..\..\res\2.ico" />
+    <Image Include="..\..\..\..\res\3.ico" />
+    <Image Include="..\..\..\..\res\4.ico" />
+    <Image Include="..\..\..\..\res\5.ico" />
+    <Image Include="..\..\..\..\res\6.ico" />
+    <Image Include="..\..\..\..\res\7.ico" />
+    <Image Include="..\..\..\..\res\8.ico" />
+    <Image Include="..\..\..\..\res\9.ico" />
+    <Image Include="..\..\..\..\res\porky.ico" />
+    <Image Include="..\..\..\..\res\taz.ico" />
+    <Image Include="..\..\..\..\res\coq.ico" />
+    <Image Include="..\..\..\..\res\elmer.ico" />
+    <Image Include="..\..\..\..\res\mars.ico" />
+    <Image Include="..\..\..\..\res\speedy.ico" />
+    <Image Include="..\..\..\..\res\rocky.ico" />
+    <Image Include="..\..\..\..\res\pepepu.ico" />
+    <Image Include="..\..\..\..\res\general.ico" />
+    <Image Include="..\..\..\..\res\hagar.ico" />
+    <Image Include="..\..\..\..\res\jerry.ico" />
+    <Image Include="..\..\..\..\res\tom.ico" />
+    <Image Include="..\..\..\..\res\snoopy.ico" />
+    <Image Include="..\..\..\..\res\woods.ico" />
+    <Image Include="..\..\..\..\res\yogi.ico" />
+    <Image Include="..\..\..\..\res\scooby.ico" />
+    <Image Include="..\..\..\..\res\shaggy.ico" />
+    <Image Include="..\..\..\..\res\freddie.ico" />
+    <Image Include="..\..\..\..\res\velma.ico" />
+    <Image Include="..\..\..\..\res\daphne.ico" />
+    <Image Include="..\..\..\..\res\woody.ico" />
+    <Image Include="..\..\..\..\res\sam.ico" />
+    <Image Include="..\..\..\..\res\runner.ico" />
+    <Image Include="..\..\..\..\res\bunny.ico" />
+    <Image Include="..\..\..\..\res\hellokitty.ico" />
+    <Image Include="..\..\..\..\cthelper\puttycyg.ico" />
+    <Image Include="..\..\..\..\res\putty_launcher.ico" />
+    <Image Include="..\..\..\..\res\bille.ico" />
+    <Image Include="..\..\..\..\res\edit.ico" />
   </ItemGroup>
 </Project>
